@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rhubarb — Hero 2: Split</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rubik:wght@700;900&display=swap"
+  rel="stylesheet"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F4EDDC',
+          ink: '#191713',
+          red: '#AE3220',
+        },
+        fontFamily: {
+          display: ['Rubik', 'sans-serif'],
+          wordmark: ['Rubik', 'sans-serif'],
+          body: ['Figtree', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="h-screen overflow-hidden bg-cream font-body">
+
+<div class="flex h-screen w-full flex-col">
+
+  <header class="flex items-center justify-between px-6 py-6 sm:px-10 sm:py-8">
+    <a href="#" class="font-wordmark text-xl font-bold lowercase text-ink sm:text-2xl">rhubarb</a>
+
+    <div class="flex items-center gap-8">
+      <nav class="hidden items-center gap-8 font-mono text-xs uppercase tracking-widest text-ink/80 md:flex">
+        <a href="#" class="hover:text-ink">Buildings</a>
+        <a href="#" class="hover:text-ink">Process</a>
+        <a href="#" class="hover:text-ink">Pricing</a>
+        <a href="#" class="hover:text-ink">About</a>
+      </nav>
+
+      <a
+        href="#"
+        class="whitespace-nowrap rounded bg-red px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-widest text-cream sm:text-xs"
+      >
+        Get growing
+      </a>
+    </div>
+  </header>
+
+  <div class="px-6 sm:px-10">
+    <h1 class="max-w-4xl font-display text-4xl font-black leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+      Your future is right behind you.
+    </h1>
+  </div>
+
+  <div class="mt-6 border-t border-ink/20 px-6 py-4 sm:px-10">
+    <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 font-mono text-[11px] uppercase tracking-widest text-ink/70 sm:text-xs">
+      <span>Backyard homes · Denver</span>
+      <span>From $400k · Design through move-in</span>
+    </div>
+  </div>
+
+  <div class="relative mt-2 min-h-0 flex-1 overflow-hidden">
+    <picture>
+      <source srcset="assets/rhubarb-hero.avif" type="image/avif" />
+      <img
+        src="assets/rhubarb-hero.jpg"
+        alt="Rhubarb backyard home"
+        class="h-full w-full object-cover"
+        style="object-position: 50% 0%;"
+      />
+    </picture>
+  </div>
+
+</div>
+
+</body>
+</html>

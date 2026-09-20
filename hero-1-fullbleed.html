@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rhubarb — Hero 1: Full-bleed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rubik:wght@700;900&display=swap"
+  rel="stylesheet"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F4EDDC',
+          ink: '#191713',
+          red: '#AE3220',
+        },
+        fontFamily: {
+          display: ['Rubik', 'sans-serif'],
+          wordmark: ['Rubik', 'sans-serif'],
+          body: ['Figtree', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="font-body bg-ink">
+
+<section class="relative h-screen w-full overflow-hidden">
+
+  <picture>
+    <source srcset="assets/rhubarb-hero.avif" type="image/avif" />
+    <img
+      src="assets/rhubarb-hero.jpg"
+      alt="Rhubarb backyard home"
+      class="absolute inset-0 h-full w-full object-cover"
+      style="object-position: 50% 75%;"
+    />
+  </picture>
+
+  <header class="absolute inset-x-0 top-6 z-20 flex justify-center px-4">
+    <nav class="flex w-full max-w-3xl items-center justify-between gap-4 rounded-full border border-ink/10 bg-cream/70 px-4 py-3 backdrop-blur-md sm:px-6">
+      <a href="#" class="font-wordmark text-lg font-bold lowercase text-ink sm:text-xl">rhubarb</a>
+
+      <div class="hidden items-center gap-8 font-mono text-xs uppercase tracking-widest text-ink/80 lg:flex">
+        <a href="#" class="hover:text-ink">Buildings</a>
+        <a href="#" class="hover:text-ink">Process</a>
+        <a href="#" class="hover:text-ink">Pricing</a>
+        <a href="#" class="hover:text-ink">About</a>
+      </div>
+
+      <a
+        href="#"
+        class="whitespace-nowrap rounded-full bg-red px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-widest text-cream sm:px-5 sm:text-xs"
+      >
+        Get growing
+      </a>
+    </nav>
+  </header>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 h-[55%] bg-gradient-to-t from-ink/70 via-ink/20 to-transparent"></div>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 px-6 pb-14 sm:px-10 sm:pb-16 lg:px-16">
+    <div class="max-w-2xl">
+      <h1 class="font-display text-4xl font-black leading-[1.05] text-cream sm:text-5xl lg:text-6xl">
+        Your future is right behind you.
+      </h1>
+      <p class="mt-5 max-w-md font-body text-base text-cream/90 sm:text-lg">
+        Rhubarb designs and builds backyard homes tailored to your lot and your life.
+      </p>
+      <a
+        href="#"
+        class="mt-7 inline-block rounded bg-red px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-cream sm:text-sm"
+      >
+        Get growing
+      </a>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

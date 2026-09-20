@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rhubarb — Hero 3: Field</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F4EDDC',
+          ink: '#191713',
+          red: '#AE3220',
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'sans-serif'],
+          wordmark: ['"Bricolage Grotesque"', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  .crossfade-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation-duration: 22s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes fade-0 {
+    0%, 20.4545% { opacity: 1; }
+    25%, 95.4545% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fade-1 {
+    0%, 20.4545% { opacity: 0; }
+    25%, 45.4545% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes fade-2 {
+    0%, 45.4545% { opacity: 0; }
+    50%, 70.4545% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+  }
+  @keyframes fade-3 {
+    0%, 70.4545% { opacity: 0; }
+    75%, 95.4545% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .crossfade-layer {
+      animation: none !important;
+      opacity: 0;
+    }
+    .crossfade-layer:first-child {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body class="bg-cream pt-20">
+
+<!-- Fixed nav: always on top, opaque cream so scrolling content never shows through -->
+<header class="fixed inset-x-0 top-0 z-50 flex items-center justify-between gap-4 bg-cream px-6 py-5 sm:px-10">
+  <a href="#" class="font-wordmark text-lg font-extrabold lowercase text-ink">rhubarb</a>
+
+  <nav class="hidden flex-1 items-center justify-center gap-6 font-mono text-xs uppercase tracking-widest text-ink/70 sm:flex sm:gap-10 lg:gap-16">
+    <a href="#" class="hover:text-ink">Buildings</a>
+    <a href="#" class="hover:text-ink">Process</a>
+    <a href="#" class="hover:text-ink">Pricing</a>
+    <a href="#" class="hover:text-ink">About</a>
+  </nav>
+
+  <!-- TODO: point to external estimate tool -->
+  <a href="#" class="whitespace-nowrap font-mono text-xs font-medium uppercase tracking-widest text-red">
+    Get an estimate
+  </a>
+</header>
+
+<div id="hero-wrapper" class="relative w-full" style="height: 200vh;">
+
+  <!-- Section 1: hero, 100vh -->
+  <div class="absolute inset-x-0 top-0 h-screen w-full">
+    <div class="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-4 p-6 sm:p-10">
+      <h1 class="max-w-[16rem] font-display text-lg font-extrabold leading-snug text-ink sm:text-xl">
+        Your future is right behind you.
+      </h1>
+      <span class="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-ink/50 sm:text-xs">
+        Scroll &amp; discover
+      </span>
+    </div>
+  </div>
+
+  <!-- Center square: fixed at viewport-center, opacity driven by scroll progress through the wrapper -->
+  <div
+    id="hero-square"
+    class="pointer-events-none fixed left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2"
+  >
+    <div class="relative h-[420px] w-[420px] max-h-[60vw] max-w-[60vw] sm:max-h-[45vw] sm:max-w-[45vw] lg:max-h-[420px] lg:max-w-[420px]">
+      <picture class="crossfade-layer" style="animation-name: fade-0;">
+        <source srcset="assets/rhubarb-hero.avif" type="image/avif" />
+        <img
+          src="assets/rhubarb-hero.jpg"
+          alt="Rhubarb backyard home"
+          class="h-full w-full object-cover"
+          style="object-position: 50% 50%;"
+        />
+      </picture>
+      <img
+        src="assets/ph-1.jpg"
+        alt=""
+        class="crossfade-layer h-full w-full object-cover"
+        style="animation-name: fade-1; object-position: 50% 50%;"
+      />
+      <img
+        src="assets/ph-2.jpg"
+        alt=""
+        class="crossfade-layer h-full w-full object-cover"
+        style="animation-name: fade-2; object-position: 50% 50%;"
+      />
+      <img
+        src="assets/ph-3.jpg"
+        alt=""
+        class="crossfade-layer h-full w-full object-cover"
+        style="animation-name: fade-3; object-position: 50% 50%;"
+      />
+    </div>
+  </div>
+
+  <!-- Section 2: Buildings gallery -->
+  <div class="absolute inset-x-0 top-[100vh] z-10 w-full bg-cream px-6 pt-[20vh] pb-[20vh] sm:px-10">
+
+    <h2 class="max-w-2xl font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl lg:text-5xl">
+      Three architectural families. One philosophy.
+    </h2>
+
+    <div class="mt-12 flex flex-col gap-16 sm:mt-20 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+
+      <a href="#" class="group block w-full sm:w-[28vw]">
+        <div class="relative overflow-hidden border border-ink">
+          <img
+            src="assets/ph-2.jpg"
+            alt="Cottage"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+        <p class="mt-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 group-hover:text-red">
+          The Cottage <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </p>
+      </a>
+
+      <a href="#" class="group block w-full sm:mt-[15vh] sm:w-[32vw]">
+        <div class="relative overflow-hidden border border-ink">
+          <img
+            src="assets/ph-1.jpg"
+            alt="Cabin"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+        <p class="mt-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors duration-300 group-hover:text-red">
+          The Cabin <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </p>
+      </a>
+
+      <a href="#" class="group block w-full sm:mt-[7vh] sm:w-[26vw]">
+        <div class="relative overflow-hidden border border-ink">
+          <img
+            src="assets/ph-3.jpg"
+            alt="Pavilion"
+            class="aspect-[4/5] w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+        <p class="mt-3 font-mono text-xs uppercase tracking-widest text-ink/60 transition-colors duration-300 group-hover:text-red">
+          The Pavilion — Coming Soon
+        </p>
+      </a>
+
+    </div>
+
+    <a href="#" class="mt-12 inline-block font-mono text-xs font-medium uppercase tracking-widest text-red sm:mt-16">
+      Browse the buildings →
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var wrapper = document.getElementById('hero-wrapper');
+    var square = document.getElementById('hero-square');
+
+    function update() {
+      var wrapperTop = wrapper.offsetTop;
+      var wrapperHeight = wrapper.offsetHeight;
+      var scrollRange = wrapperHeight - window.innerHeight;
+      var progress = scrollRange > 0 ? (window.scrollY - wrapperTop) / scrollRange : 0;
+      progress = Math.max(0, Math.min(1, progress));
+
+      var opacity = progress <= 0.5 ? 1 : 1 - (progress - 0.5) / 0.5;
+      square.style.opacity = String(opacity);
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+
+</body>
+</html>

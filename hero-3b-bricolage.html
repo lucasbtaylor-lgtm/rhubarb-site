@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rhubarb — Hero 3b: Field (Bricolage Grotesque)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rubik:wght@700&display=swap"
+  rel="stylesheet"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#F4EDDC',
+          ink: '#191713',
+          red: '#AE3220',
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'sans-serif'],
+          wordmark: ['Rubik', 'sans-serif'],
+          body: ['Figtree', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="h-screen overflow-hidden bg-cream font-body">
+
+<div class="relative h-screen w-full">
+
+  <div class="absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-4 p-6 sm:p-10">
+    <a href="#" class="font-wordmark text-xs font-bold lowercase text-ink">rhubarb</a>
+
+    <nav class="hidden flex-1 items-center justify-center gap-6 font-mono text-xs uppercase tracking-widest text-ink/70 sm:flex sm:gap-10 lg:gap-16">
+      <a href="#" class="hover:text-ink">Buildings</a>
+      <a href="#" class="hover:text-ink">Process</a>
+      <a href="#" class="hover:text-ink">Pricing</a>
+      <a href="#" class="hover:text-ink">About</a>
+    </nav>
+
+    <a href="#" class="whitespace-nowrap font-mono text-xs font-medium uppercase tracking-widest text-red">
+      Get growing
+    </a>
+  </div>
+
+  <div class="absolute inset-0 flex items-center justify-center p-6">
+    <picture>
+      <source srcset="assets/rhubarb-hero.avif" type="image/avif" />
+      <img
+        src="assets/rhubarb-hero.jpg"
+        alt="Rhubarb backyard home"
+        class="h-[420px] w-[420px] max-h-[60vw] max-w-[60vw] object-cover sm:max-h-[45vw] sm:max-w-[45vw] lg:max-h-[420px] lg:max-w-[420px]"
+        style="object-position: 50% 50%;"
+      />
+    </picture>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-4 p-6 sm:p-10">
+    <h1 class="max-w-[16rem] font-display text-lg font-extrabold leading-snug text-ink sm:text-xl">
+      Your future is right behind you.
+    </h1>
+    <span class="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-ink/50 sm:text-xs">
+      Scroll &amp; discover
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>
